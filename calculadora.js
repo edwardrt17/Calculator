@@ -105,6 +105,18 @@ divide.onclick = function() {
     limpiar();
 }
 
+botonIgual.addEventListener('click', function() {
+    operacion2 = resultado.textContent;
+    calcular();
+
+})
+
+
+botonDelete.addEventListener('click', function() {
+    borrar();
+})
+
+
 
 function calcular() {
 
@@ -143,10 +155,13 @@ function calcular() {
                 return;
 
         }
-
     }
+    let resultadoConvertido = calculo.toString();
 
-    resultado.textContent = calculo;
+    console.log(resultadoConvertido.length);
+
+    resultado.innerHTML = resultadoConvertido.slice(0, 12);
+
 
 
 }
@@ -155,18 +170,6 @@ function calcular() {
 
 
 
-botonIgual.addEventListener('click', function() {
-
-
-    operacion2 = resultado.textContent;
-    calcular();
-
-})
-
-
-botonDelete.addEventListener('click', function() {
-    borrar();
-})
 
 function limpiar() {
     resultado.textContent = '';
